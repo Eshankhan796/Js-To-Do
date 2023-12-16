@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+
+  <title>Todo App</title>
+</head>
+
+<body>
+  <h1 class="a1">To-Do</h1>
+  <div id="notePad" class="a2 pattern-dot">
+    <form id="inputForm" class="a3" onsubmit="todoAdd(event)">
+      <textarea id="taskInput" autofocus placeholder="Enter Tasks." rows="1" cols="50"></textarea>
+      <button type="submit">
+        <ion-icon name="return-down-back-outline"></ion-icon>
+      </button>
+    </form>
+    <div class="a6">
+      <div class="a5">
+        <div class="select">
+          <span class="selected">Dot</span>
+          <ion-icon class="caret" name="chevron-down-outline"></ion-icon>
+        </div>
+        <ul class="menu">
+          <li onclick="changePattern('none')">None</li>
+          <li onclick="changePattern('pattern-dot')" class="active">Dot</li>
+          <li onclick="changePattern('pattern-line')">Line</li>
+        </ul>
+      </div>
+      <div class="a5">
+        <div class="select">
+          <span class="selected">16px</span>
+          <ion-icon class="caret" name="chevron-down-outline"></ion-icon>
+        </div>
+        <ul class="menu font-list">
+          <li onclick="changeFontSize('8px')">8px</li>
+          <li onclick="changeFontSize('10px')">10px</li>
+          <li onclick="changeFontSize('12px')">12px</li>
+          <li onclick="changeFontSize('14px')">14px</li>
+          <li class="active" onclick="changeFontSize('16px')">16px</li>
+          <li onclick="changeFontSize('18px')">18px</li>
+          <li onclick="changeFontSize('20px')">20px</li>
+          <li onclick="changeFontSize('22px')">22px</li>
+          <li onclick="changeFontSize('24px')">24px</li>
+          <li onclick="changeFontSize('26px')">26px</li>
+          <li onclick="changeFontSize('28px')">28px</li>
+          <li onclick="changeFontSize('30px')">30px</li>
+        </ul>
+      </div>
+    </div>
+    <h1 id="nothingToDo" class="a4">Nothing to do</h1>
+    <ul id="noteList">
+    </ul>
+  </div>
+  <script src="/app.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
