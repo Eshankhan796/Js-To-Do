@@ -187,7 +187,7 @@ button {
 .font-list::-webkit-scrollbar-track {
   background-color: #23242A;
   border-radius: 5px;
-  
+
 }
 
 .font-list::-webkit-scrollbar-thumb {
@@ -227,9 +227,10 @@ button {
   padding: 8px 5px;
   display: flex;
   align-items: center;
+
 }
 
-.checkmarkBtn{
+.checkMarkBtn {
   font-size: 23px;
   display: flex;
   justify-content: center;
@@ -237,11 +238,22 @@ button {
   margin-right: 3px;
 }
 
-.listMenu {
+.checked {
+  text-decoration: line-through;
+  color: rgba(36, 37, 55, 0.60);
+}
+
+.trash-ion-icon {
   margin-left: auto;
   display: flex;
   font-size: 20px;
   justify-content: center;
   align-items: center;
   padding-left: 5px;
+}
+
+.trash-ion-icon,
+.checkMarkBtn {
+  flex: 0 0 auto;
+  cursor: pointer;
 }

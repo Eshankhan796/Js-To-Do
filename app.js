@@ -5,6 +5,10 @@ const nothingToDo = document.getElementById('nothingToDo');
 const dropdowns = document.querySelectorAll('.a5');
 const form = document.getElementById('inputForm');
 
+window.onload = function() {
+  loadLocalStorage();
+};
+
 function todoAdd(event) {
   const taskInputValue = taskInput.value.trim();
 
@@ -12,7 +16,7 @@ function todoAdd(event) {
     alert('Oops! Looks like you forgot to enter a task. Please add a to-do item before submitting.');
     return;
   };
-  
+
   event.preventDefault();
   createList(taskInputValue);
   nothingToDo.remove();
@@ -21,18 +25,72 @@ function todoAdd(event) {
 
 function createList(TaskValue) {
   const mainElement = document.createElement('li');
-  const checkMarkBtn = document.createElement('div');
+  const checkMarkBtn = document.createElement('ion-icon');
   const noteContent = document.createElement('span');
-  const trashBtn = document.createElement('div');
-  
+  const trashBtn = document.createElement('ion-icon');
+
+  checkMarkBtn.setAttribute('name', 'checkmark-circle-outline');
+  trashBtn.setAttribute('name', 'trash');
+
+  trashBtn.classList.add('trash-ion-icon');
+  checkMarkBtn.classList.add('checkMarkBtn');
   mainElement.classList.add('list');
-  trashBtn.classList.add('listMenu');
-  checkMarkBtn.innerHTML = '<ion-icon class="checkmarkBtn" name="checkmark-circle-outline"></ion-icon>';
-  trashBtn.innerHTML = '<ion-icon class="trashIcon" name="trash-outline"></ion-icon>';
   noteContent.innerText = TaskValue;
 
   mainElement.append(checkMarkBtn, noteContent, trashBtn);
   noteList.appendChild(mainElement);
+  CheckOperation(checkMarkBtn, noteContent);
+  deleteOperation(trashBtn, mainElement);
+  saveLocalStorage(TaskValue);
+};
+
+function saveLocalStorage(TaskValue) {
+  const encryptedTask = btoa(TaskValue);
+  const data = JSON.parse(localStorage.getItem('data')) || [];
+  data.push(encryptedTask);
+  localStorage.setItem('data', JSON.stringify(data));
+};
+
+function loadLocalStorage() {
+  const data = JSON.parse(localStorage.getItem('data')) || [];
+ 
+  data.forEach((encryptedTask) => {
+    const decryptedTask = atob(encryptedTask);
+    const mainElement = document.createElement('li');
+    const checkMarkBtn = document.createElement('ion-icon');
+    const noteContent = document.createElement('span');
+    const trashBtn = document.createElement('ion-icon');
+
+    checkMarkBtn.setAttribute('name', 'checkmark-circle-outline');
+    trashBtn.setAttribute('name', 'trash');
+
+    trashBtn.classList.add('trash-ion-icon');
+    checkMarkBtn.classList.add('checkMarkBtn');
+    mainElement.classList.add('list');
+    noteContent.innerText = decryptedTask;
+
+    mainElement.append(checkMarkBtn, noteContent, trashBtn);
+    noteList.appendChild(mainElement);
+    CheckOperation(checkMarkBtn, noteContent);
+    deleteOperation(trashBtn, mainElement);
+    nothingToDo.remove();
+  });
+};
+
+function CheckOperation(checkBtn, noteContent) {
+  checkBtn.addEventListener('click', () => {
+    const currentValue = checkBtn.getAttribute('name');
+    const newValue = currentValue === 'checkmark-circle-outline' ? 'checkmark-circle' : 'checkmark-circle-outline';
+    checkBtn.setAttribute('name', newValue);
+    noteContent.classList.toggle('checked');
+  });
+};
+
+function deleteOperation(trashBtn, mainElement) {
+  trashBtn.addEventListener('click', () => {
+    mainElement.remove();
+    listCheck();
+  });
 };
 
 function changePattern(pattern) {
@@ -41,6 +99,13 @@ function changePattern(pattern) {
   if (pattern !== "none") {
     notePad.classList.add(pattern);
   };
+};
+
+function listCheck() {
+  const noteListChilds = noteList.getElementsByTagName('li');
+  if (noteListChilds.length === 0) {
+    notePad.append(nothingToDo);
+  }
 };
 
 function changeFontSize(size) {
