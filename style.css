@@ -1,1 +1,306 @@
-*{margin:0;padding:0;box-sizing:border-box;user-select:none;-webkit-tap-highlight-color:transparent}::selection{color:#f9fafe;background-color:#d7374a}.a3 textarea,body{font-family:"Playpen Sans",cursive}body{padding:20px 0 70px;display:flex;align-items:center;flex-flow:column;background-color:#05071f}.a1{font-size:40px;text-align:center;color:#cc283c;margin-bottom:30px}.a2,.pattern-dot{background-color:#f5f6ff}.a2{height:auto;min-height:500px;width:85%;max-width:450px;border-radius:20px;padding-top:15px;padding-bottom:8px}.pattern-dot{background-image:radial-gradient(#d7374a 2px,transparent 2px);background-size:35px 35px}.pattern-line{background-image:repeating-linear-gradient(0deg,#d7374a,#d7374a 2px,transparent 2px,transparent);background-size:40px 40px;background-color:#f5f6ff}.a3{display:flex;width:100%;gap:0 10px;justify-content:space-between;align-items:center}.a3 textarea{width:100%;height:40px;margin-left:12px;background:#14162b;color:#f9fafe;font-size:15px;padding:0 5px;border:2px solid #242537;border-radius:8px;outline:0;transition:border-color .5s}.a3 textarea:hover{border-color:#d7374a}.a3 textarea:focus{border-color:#d7374a}.a3 button{background:#d7374a;color:#2c2a38;border:0;border-radius:10px;margin-right:12px;height:38px}.a3 button ion-icon{margin:4px 5px 0;font-size:30px}.a3 button:hover{outline:2px solid #242537}.a3 textarea,button{vertical-align:middle}.a4{margin-top:50%;text-align:center;opacity:.5}.a6{margin:10px auto;width:50%;display:flex;justify-content:space-between}.a5{max-width:100px;position:relative}.a5 *{box-sizing:border-box}.select{width:55px;background-color:#14162b;color:#f9fafe;display:flex;justify-content:space-between;align-items:center;border:2px #242537 solid;border-radius:5px;padding:5px;cursor:pointer;transition:background .3s;font-size:10px}.select-clicked{border:2px #d7374a solid;box-shadow:0 0 5px #d7374a}.select:hover{background:#2a2f3b}.caret{transition:.3s}.caret-rotate{transform:rotate(180deg)}.menu{list-style:none;padding:0 4px;background-color:#2f3040;border:2px #d7374a solid;box-shadow:0 8px 16px rgba(0,0,0,.2);border-radius:5px;color:#f9fafe;font-size:10px;position:absolute;top:35px;left:50%;width:100%;height:105px;overflow-y:scroll;transform:translateX(-50%);opacity:0;display:none;z-index:1}.font-list::-webkit-scrollbar{width:7px}.font-list::-webkit-scrollbar-track{background-color:#23242a;border-radius:5px}.font-list::-webkit-scrollbar-thumb{background-color:#d7374a;border-radius:5px;border:2.5px #23242a solid}.menu li{padding:6px 8px;margin:4px 0;border-radius:8px;cursor:pointer}.menu li:hover{background-color:#3a3b3f}.active{background-color:#23242a}.menu-open{display:block;opacity:1}.checkMarkBtn,.list{display:flex;align-items:center}.list{color:#242537;width:90%;margin:0 auto 10px;background-color:#ffe4e4;list-style:none;border-radius:8px;padding:8px 5px}.checkMarkBtn{font-size:23px;justify-content:center;margin-right:3px}.checked{text-decoration:line-through;color:rgba(36,37,55,.6)}.trash-ion-icon{margin-left:auto;display:flex;font-size:20px;justify-content:center;align-items:center;padding-left:5px}.checkMarkBtn,.trash-ion-icon{flex:0 0 auto;cursor:pointer}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: #f9fafe;
+  background-color: #d7374a;
+}
+
+body {
+  padding: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  background-color: #05071f;
+  font-family: 'Playpen Sans', cursive;
+}
+
+.a1 {
+  font-size: 40px;
+  text-align: center;
+  color: #cc283c;
+  margin-bottom: 30px;
+}
+
+.a2 {
+  height: auto;
+  min-height: 500px;
+  width: 85%;
+  max-width: 450px;
+  background-color: #F5F6FF;
+  border-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 8px;
+}
+
+.pattern-dot {
+  background-image: radial-gradient(#d7374a 2px, transparent 2px);
+  background-size: 35px 35px;
+  background-color: #F5F6FF;
+}
+
+.pattern-line {
+  background-image: repeating-linear-gradient(0deg, #d7374a, #d7374a 2px, transparent 2px, transparent);
+  background-size: 40px 40px;
+  background-color: #F5F6FF;
+}
+
+.a3 {
+  display: flex;
+  width: 100%;
+  gap: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a3 textarea {
+  width: 100%;
+  height: 40px;
+  margin-left: 12px;
+  background: #14162B;
+  color: #f9fafe;
+  font-size: 15px;
+  padding: 0px 5px 0px 5px;
+  border: 2px solid #242537;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color .5s;
+  font-family: 'Playpen Sans', cursive;
+}
+
+.a3 textarea:hover {
+  border-color: #D7374A;
+}
+
+.a3 textarea:focus {
+  border-color: #d7374a;
+}
+
+.a3 button {
+  background: #d7374a;
+  color: #2c2a38;
+  border: none;
+  border-radius: 10px;
+  margin-right: 12px;
+  height: 38px;
+}
+
+.a3 button ion-icon {
+  margin: 4px 5px 0 5px;
+  font-size: 30px;
+}
+
+.a3 button:hover {
+  outline: 2px solid #242537;
+}
+
+.a3 textarea,
+button {
+  vertical-align: middle;
+}
+
+.a4 {
+  margin-top: 50%;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.a6 {
+  margin: 10px auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.a5 {
+  max-width: 100px;
+  position: relative;
+}
+
+.a5 * {
+  box-sizing: border-box;
+}
+
+.select {
+  width: 55px;
+  background-color: #14162B;
+  color: #f9fafe;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #242537 solid;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 10px;
+
+}
+
+.select-clicked {
+  border: 2px #D7374A solid;
+  box-shadow: 0 0 5px #d7374a;
+}
+
+.select:hover {
+  background: #2a2f3b;
+}
+
+.caret {
+  transition: 0.3s;
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0px 4px;
+  background-color: #2F3040;
+  border: 2px #D7374A solid;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: #f9fafe;
+  font-size: 10px;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 100%;
+  height: 105px;
+  overflow-y: scroll;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  z-index: 1;
+}
+
+.font-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.font-list::-webkit-scrollbar-track {
+  background-color: #23242A;
+  border-radius: 5px;
+
+}
+
+.font-list::-webkit-scrollbar-thumb {
+  background-color: #D7374A;
+  border-radius: 5px;
+  border: 2.5px #23242A solid;
+}
+
+
+.menu li {
+  padding: 6px 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #3A3B3F;
+}
+
+.active {
+  background-color: #23242a;
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+
+.list {
+  color: #242537;
+  width: 90%;
+  margin: 0 auto 10px auto;
+  background-color: #FFE4E4;
+  list-style: none;
+  border-radius: 8px;
+  padding: 8px 5px;
+  display: flex;
+  align-items: center;
+
+}
+
+.checkMarkBtn {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3px;
+}
+
+.decoration {
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+.trash-ion-icon {
+  margin-left: auto;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.trash-ion-icon,
+.checkMarkBtn {
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px auto 0 auto;
+  width: 95%;
+  height: auto;
+  padding: 0 40px 15px 40px;
+  background: rgba(186, 196, 202, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(186, 196, 202, 0.25);
+}
+
+.social-media-icons {
+  margin: 20px 0 30px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.social-media-icons ion-icon {
+  font-size: 28px;
+  color: #B3BECD;
+  transition: color 300ms, transform 300ms;
+}
+
+.social-media-icons ion-icon:hover {
+  transform: translateY(-20px);
+  color: #d7374a;
+}
+
+.line {
+  position: relative;
+  top: -2px;
+  border-radius: 24px;
+  height: 4px;
+  width: 100px;
+  background: #cc283c;
+  -webkit-box-shadow: 0 6px 18px 1px #d7374a;
+  -moz-box-shadow: 0 6px 18px 1px #d7374a;
+  box-shadow: 0 6px 18px 1px #d7374a;
+  margin: 0 auto 0 auto;
+}
